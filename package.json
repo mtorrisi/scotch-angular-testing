@@ -1,28 +1,28 @@
 {
-  "name": "scotch-angular-testing",
+  "name": "test",
   "version": "1.0.0",
-  "description": "Learn to test Angular code with Jasmine and Karma",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "karma start",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Adam Morgan",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.1",
-    "express": "^4.13.4",
-    "morgan": "^1.7.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "angular": "^1.5.6",
-    "angular-mocks": "^1.5.6",
-    "angular-ui-router": "^0.3.0",
-    "jasmine-core": "^2.4.1",
-    "karma": "^0.13.22",
-    "karma-chrome-launcher": "^1.0.1",
-    "karma-jasmine": "^1.0.2",
-    "karma-spec-reporter": "0.0.26"
+    "angular": "^1.7.7",
+    "angular-mocks": "^1.7.7",
+    "angular-ui-router": "^1.0.20",
+    "jasmine-core": "^3.3.0",
+    "karma": "^4.0.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-spec-reporter": "0.0.32"
   }
 }

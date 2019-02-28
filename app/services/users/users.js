@@ -1,9 +1,11 @@
 (function() {
   'use strict';
 
+  // Creating the module and factory we referenced in the beforeEach blocks in our test file
   angular.module('api.users', [])
   .factory('Users', function() {
     var Users = {};
+
     var userList = [
       {
         id: '1',
@@ -35,11 +37,14 @@
       }
     ];
 
+    // Defining all to make our test pass. It doesn't need to do anything yet.
     Users.all = function() {
       return userList;
     };
 
+    // Defining findById to make our test pass. Once again, it doesn't need to do anything yet.
     Users.findById = function(id) {
+      // Returning a single user object as our test expects it to
       return userList.find(function(user) {
         return user.id === id;
       });

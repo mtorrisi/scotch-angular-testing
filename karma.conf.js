@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Wed Jun 01 2016 17:37:40 GMT-0400 (EDT)
+// Generated on Wed Feb 27 2019 18:17:14 GMT+0100 (Central European Standard Time)
 
 module.exports = function(config) {
   config.set({
@@ -15,16 +15,21 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './node_modules/angular/angular.js',
-      './node_modules/angular-ui-router/release/angular-ui-router.js',
-      './node_modules/angular-mocks/angular-mocks.js',
-      './app/services/users/users.js',
+      './node_modules/angular/angular.js',                             // angular
+      './node_modules/angular-ui-router/release/angular-ui-router.js', // ui-router
+      './node_modules/angular-mocks/angular-mocks.js',                 // loads our modules for tests
+      './app/testing/common.js',
+      './app/services/users/users.js',                                 // our Users factory
+      './app/services/pokemon/pokemon.js',
+      './app/components/users/users.js',
       './app/app.js',
-      './app/services/users/users.spec.js'
+      './app/services/users/users.spec.js',
+      './app/services/pokemon/pokemon.spec.js',
+      './app/components/users/users.spec.js'
     ],
 
 
-    // list of files to exclude
+    // list of files / patterns to exclude
     exclude: [
     ],
 
@@ -38,6 +43,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+    // reporters: ['progress'],
     reporters: ['spec'],
 
 
@@ -70,5 +76,5 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  })
+  });
 }
