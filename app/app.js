@@ -10,4 +10,3 @@
     $urlRouterProvider.otherwise('/users');
   });
 })();
-// JUST FOR FUN.
