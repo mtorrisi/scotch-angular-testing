@@ -22,10 +22,12 @@ module.exports = function(config) {
       './app/services/users/users.js',                                 // our Users factory
       './app/services/pokemon/pokemon.js',
       './app/components/users/users.js',
+      './app/components/profile/profile.js',
       './app/app.js',
       './app/services/users/users.spec.js',
       './app/services/pokemon/pokemon.spec.js',
-      './app/components/users/users.spec.js'
+      './app/components/users/users.spec.js',
+      './app/components/profile/profile.spec.js'
     ],
 
 
@@ -37,14 +39,20 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      '**/app/**/*.js': ['coverage'],
     },
 
+    plugins: [
+        'karma-jasmine',
+        'karma-chrome-launcher',
+        'karma-coverage'
+    ],
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    // reporters: ['progress'],
-    reporters: ['spec'],
+    reporters: ['progress', 'coverage'],
+    // reporters: ['spec'],
 
 
     // web server port
@@ -75,6 +83,15 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    coverageReporter: {
+        includeAllSources: true,
+        dir: 'coverage/',
+        reporters: [
+            { type: "html", subdir: "html" },
+            { type: 'text-summary' }
+        ]
+    }
   });
 }
